@@ -1,0 +1,91 @@
+
+/* Damos estilo a nuestros elementos al fondo */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle, #1e1e1e, #000);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Damos estilo a la caja del Reloj*/
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border : 1px solid rgb(207, 204, 241);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff, 0 0 40px #00f, 0 0 60px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* aqui estamos posicionando nuestras agujas */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 4px;
+}
+/* Aqui le damos estilos a la aguja de horas*/
+.hand.hour {
+  width: 5px;
+  height: 75px;
+  background: white;
+}
+
+/* Aqui le damos estilos a la aguja de los minutos */
+
+.hand.minute {
+  width: 4px;
+  height: 100px;
+  background: white;
+}
+
+/* aqui le damos estilos a la aguja de lo segundos */
+.hand.second {
+  width: 2px;
+  height: 120px;
+  background: red;
+}
+
+/* Damos estilo a los numeros*/
+.number {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* estilos a la fecha*/
+#date {
+  position: absolute;
+  bottom: -40px;
+  font-size: 18px;
+  padding: 5px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff, 0 0 40px #00f, 0 0 60px #fff;
+}
+/* estilos a nuestra marca*/
+.clock::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;  /* más grande */
+  height: 200px;
+  background: url("/img/xing.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.6;  /* súbelo para que se vea más */
+  pointer-events: none;
+}
+
+
